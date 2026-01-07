@@ -392,7 +392,7 @@ class checkOut : AppCompatActivity() , PaymentResultWithDataListener {
     private  fun NotificationForOrder()
     {
          val builder = NotificationCompat.Builder(this@checkOut , CHANNEL_ID)
-            builder.setSmallIcon(R.drawable.slack)
+            builder.setSmallIcon(R.drawable.letters)
                 .setContentTitle("Swadish")
                 .setContentText("Food Order Successfully...😊")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
