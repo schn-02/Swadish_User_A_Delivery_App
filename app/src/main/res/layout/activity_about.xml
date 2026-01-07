@@ -43,7 +43,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:text="Hi, I’m Sachin, a BCA student. I created this Food Ordering App as part of my practice to enhance my skills and showcase my work
+        android:text="I created this Food Ordering App as part of my practice to enhance my skills and showcase my work
 
   Easy Ordering: Quickly select and order your favorite dishes.
 🚫 No Ads: Enjoy a clean and distraction-free experience./n
@@ -63,7 +63,7 @@ This app is a reflection of my learning journey and my passion for development. 
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="This Application is built by Sachin\nA BCA student."
+        android:text="Built by Sachin Rawat."
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="17sp"
