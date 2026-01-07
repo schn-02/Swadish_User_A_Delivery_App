@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ClickedCategory">
+
+    <!-- Toolbar Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearcategory"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarCategory"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/black"
+            app:cardUseCompatPadding="true"
+            app:menu="@menu/menuclicked"
+            app:title="Product name"
+            app:titleMargin="10dp"
+            app:titleTextColor="@color/yellow"
+            app:layout_collapseMode="parallax" />
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/clickedRecyler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearcategory"
+        android:layout_above="@+id/footerLayout"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
+
+    <!-- Footer Section for Next and Count -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_next"
+        android:layout_marginBottom="70dp">
+
+        <!-- Next Text -->
+        <TextView
+            android:id="@+id/itemCartMain1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next:-"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/carts3"
+            android:drawablePadding="20dp"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <!-- Count Text -->
+        <TextView
+            android:id="@+id/showItemCount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:text="0"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@color/green"
+            android:textSize="35sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- No Products Message -->
+    <TextView
+        android:id="@+id/noProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Products Are Available"
+        android:layout_marginTop="300dp"
+        android:textColor="@color/yellow"
+        android:textSize="30sp"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <!-- Lottie Animation -->
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loadingFood5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:contentDescription="Signup Animation"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/nocategory" />
+
+    <!-- Shimmer Effect -->
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerClicked"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</RelativeLayout>

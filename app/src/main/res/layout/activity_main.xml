@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mainbg"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/linearupper"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar1"
+            android:backgroundTint="@color/black"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrowl"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:drawablePadding="10dp"
+                android:hint="Search"
+                android:gravity="left"
+                android:padding="15dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_Recycler"
+        android:layout_below="@+id/linearupper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/itemCartMain"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"/>
+
+
+    <LinearLayout
+        android:id="@+id/itemCartMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_next"
+        android:layout_marginBottom="70dp">
+
+        <!-- Next Text -->
+        <TextView
+            android:id="@+id/Next1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next:-"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:drawableLeft="@drawable/carts3"
+            android:drawablePadding="20dp"
+            android:textSize="40sp"
+            android:visibility="gone" />
+
+        <!-- Count Text -->
+        <TextView
+            android:id="@+id/showCount"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="@color/green"
+            android:textSize="35sp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textNoProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No product are available"
+        android:textColor="@color/yellow"
+        android:layout_marginTop="100dp"
+        android:visibility="gone"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/shimmer"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/simmer_effect_main"/>
+            <include layout="@layout/simmer_effect_main"/>
+            <include layout="@layout/simmer_effect_main"/>
+            <include layout="@layout/simmer_effect_main"/>
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+</RelativeLayout>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/slack"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/slack"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Blinklit"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.userBlinkit.Splash.SplashMain"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.userBlinkit.Splash.checkSplash"
+            android:exported="false" />
+        <activity
+            android:name="com.example.userBlinkit.About"
+            android:exported="false" />
+        <activity
+            android:name="com.example.userBlinkit.Orders.Orders"
+            android:exported="true" />
+        <activity
+            android:name="com.example.userBlinkit.Profile.Profile"
+            android:exported="false" />
+        <activity
+            android:name="com.example.userBlinkit.CheckOut.checkOut"
+            android:exported="false" />
+        <activity
+            android:name="com.example.userBlinkit.ClickedCategory"
+            android:exported="false" />
+        <activity
+            android:name="com.example.userBlinkit.Home.Home"
+            android:exported="true" />
+        <activity
+            android:name="com.example.userBlinkit.Authentication.Signup"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name="com.example.userBlinkit.Authentication.Signin"
+            android:exported="true" />
+        <activity
+            android:name="com.example.userBlinkit.Splash.Splash_Screen_Main"
+            android:exported="true" />
+        <activity
+            android:name="com.example.userBlinkit.MainActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_2umtP5sifdGMk1" />
+    </application>
+
+</manifest>
