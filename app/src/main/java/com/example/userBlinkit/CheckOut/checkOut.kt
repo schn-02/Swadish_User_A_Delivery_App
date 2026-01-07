@@ -71,7 +71,7 @@ class checkOut : AppCompatActivity() , PaymentResultWithDataListener {
         database = FirebaseDatabase.getInstance()
         auth = FirebaseAuth.getInstance()
 
-        Checkout.preload(this@checkOut)
+
         val co  =Checkout()
         co.setKeyID("rzp_test_2umtP5sifdGMk1")
         NotificationChannel()

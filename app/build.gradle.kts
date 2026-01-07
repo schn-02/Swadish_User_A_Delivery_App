@@ -69,11 +69,10 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.firebase.vertexai)
     annotationProcessor(libs.compiler)
-    implementation("com.razorpay:checkout:1.6.26")
+    implementation("com.razorpay:checkout:1.6.33")
 
     implementation(libs.volley)
 
-    implementation (libs.checkout)
 
     implementation("com.facebook.shimmer:shimmer:0.5.0@aar")
 
