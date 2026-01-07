@@ -29,7 +29,6 @@ An Android app built with Kotlin, XML, and Firebase. Users can browse menus, pla
     <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233101.png" width="140"/></td>
     <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233111.png" width="140"/></td>
     <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233126.png" width="140"/></td>
-    <td></td>
   </tr>
 </table>
 
