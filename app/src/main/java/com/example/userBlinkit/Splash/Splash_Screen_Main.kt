@@ -13,7 +13,7 @@ class Splash_Screen_Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_splash_screen_main)
+        setContentView(R.layout.activity_splash_main)
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, Signup::class.java))
             overridePendingTransition(R.anim.slide_in_right,0)

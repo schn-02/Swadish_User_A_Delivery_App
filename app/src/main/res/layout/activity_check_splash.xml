@@ -1,23 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:background="@color/black"
     android:layout_height="match_parent"
-    tools:context=".Splash.checkSplash">
+    android:background="@drawable/bg_success_screen"
+    android:padding="22dp">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/done"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="Signup Animation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+    <LinearLayout
+        android:id="@+id/successCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_success_card"
+        android:elevation="14dp"
+        android:paddingStart="22dp"
+        android:paddingEnd="22dp"
+        android:paddingTop="26dp"
+        android:paddingBottom="28dp"
+        app:layout_constraintWidth_percent="0.94"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/done" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/done"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:contentDescription="Order Success Animation"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/done" />
+
+        <TextView
+            android:id="@+id/successTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Order Placed!"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-black" />
+
+        <TextView
+            android:id="@+id/successSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Your delicious food is being prepared. Track your order from the orders section."
+            android:textAlignment="center"
+            android:textColor="#DADADA"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp" />
+
+        <TextView
+            android:id="@+id/statusChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_success_chip"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Payment Successful"
+            android:textColor="#24D366"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

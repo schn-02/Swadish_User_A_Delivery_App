@@ -1,83 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/paymentRoot"
     android:layout_width="match_parent"
-    android:layout_gravity="center"
+    android:layout_height="wrap_content"
     android:background="@drawable/about222"
-    android:layout_height="wrap_content">
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp"
+    android:paddingTop="22dp"
+    android:paddingBottom="24dp">
 
-
+    <!-- Title -->
     <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
+        android:id="@+id/paymentTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:text="Payment Method"
+        android:textAlignment="center"
         android:textColor="@color/green"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/paytm"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/paytm"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="48dp"
-        android:contentDescription="Signup Animation"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="sans-serif-black"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/online" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+        android:id="@+id/paymentSubtitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:text="Online"
-        android:textColor="#F6D607"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="5dp"
+        android:text="Choose how you want to pay for your order"
+        android:textAlignment="center"
+        android:textColor="#DADADA"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/paymentTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paytm"
-        app:layout_constraintVertical_bias="0.047" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/CashOn"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="48dp"
-        android:contentDescription="Signup Animation"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/money" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
+    <!-- Payment Options Row -->
+    <LinearLayout
+        android:id="@+id/paymentOptionsContainer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Cash"
-        android:textColor="@color/yellow"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.653"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toBottomOf="@+id/CashOn" />
+        android:layout_marginTop="22dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/paymentSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <!-- Online Payment Card -->
+        <LinearLayout
+            android:id="@+id/onlinePaymentCard"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_payment_option_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/paytm"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:contentDescription="Online Payment Animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/online" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Online"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/onlineSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Pay securely"
+                android:textColor="#BDBDBD"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Cash Payment Card -->
+        <LinearLayout
+            android:id="@+id/cashPaymentCard"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_payment_option_card"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/CashOn"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:contentDescription="Cash On Delivery Animation"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/money" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cash"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/cashSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:text="Pay on delivery"
+                android:textColor="#BDBDBD"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

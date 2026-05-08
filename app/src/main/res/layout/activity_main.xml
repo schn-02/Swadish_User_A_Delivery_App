@@ -1,130 +1,237 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbg"
-    tools:context=".MainActivity">
+    android:background="#D44107">
 
-
+    <!-- Top Search Toolbar -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:id="@+id/linearupper"
-        android:layout_marginTop="40dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar1"
-            android:backgroundTint="@color/black"
-            android:layout_margin="10dp">
-
-            <ImageView
-                android:id="@+id/back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/arrowl"
-                android:layout_marginRight="10dp"/>
-
-            <EditText
-                android:id="@+id/search"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:drawablePadding="10dp"
-                android:hint="Search"
-                android:gravity="left"
-                android:padding="15dp"
-                android:layout_marginLeft="20dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </androidx.appcompat.widget.Toolbar>
-    </LinearLayout>
-
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/home_Recycler"
-        android:layout_below="@+id/linearupper"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/itemCartMain"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"/>
-
-
-    <LinearLayout
-        android:id="@+id/itemCartMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/searchHeader"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/bg_search_toolbar"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:background="@drawable/bg_next"
-        android:layout_marginBottom="70dp">
+        android:paddingStart="10dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Next Text -->
-        <TextView
-            android:id="@+id/Next1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next:-"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:drawableLeft="@drawable/carts3"
-            android:drawablePadding="20dp"
-            android:textSize="40sp"
-            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="Back"
+            android:padding="10dp"
+            android:src="@drawable/arrowl" />
 
-        <!-- Count Text -->
-        <TextView
-            android:id="@+id/showCount"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:text="0"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:background="@color/green"
-            android:textSize="35sp"
-            android:layout_marginBottom="10dp"
-            android:visibility="gone" />
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/search1"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:hint="Search food items"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="#BDBDBD"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
     </LinearLayout>
+
+    <!-- Small Heading -->
+    <TextView
+        android:id="@+id/resultTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="18dp"
+        android:text="Search Results"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toBottomOf="@id/searchHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textNoProduct"
-        android:layout_width="wrap_content"
+        android:id="@+id/resultSubtitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="No product are available"
-        android:textColor="@color/yellow"
-        android:layout_marginTop="100dp"
-        android:visibility="gone"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="18dp"
+        android:text="Find your favourite dishes quickly"
+        android:textColor="#D6D6D6"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/resultTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Products RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/home_Recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="94dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="18dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/resultSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:spanCount="2"
+        tools:itemCount="6"/>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyStateContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/searchHeader"
+        app:layout_constraintBottom_toTopOf="@id/itemCartMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/emptyIcon"
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:background="@drawable/bg_empty_icon"
+            android:gravity="center"
+            android:text="🍽️"
+            android:textSize="38sp" />
+
+        <TextView
+            android:id="@+id/textNoProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="No products available"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textNoProductSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="Try searching with another food name."
+            android:textAlignment="center"
+            android:textColor="#DADADA"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Shimmer Loading -->
     <com.facebook.shimmer.ShimmerFrameLayout
-        android:layout_width="match_parent"
         android:id="@+id/shimmer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="94dp"
         android:visibility="visible"
-        android:layout_height="match_parent">
+        app:layout_constraintTop_toBottomOf="@id/resultSubtitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
-            <include layout="@layout/simmer_effect_main"/>
-            <include layout="@layout/simmer_effect_main"/>
-            <include layout="@layout/simmer_effect_main"/>
-            <include layout="@layout/simmer_effect_main"/>
+
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
+            <include layout="@layout/simmer_effect_main" />
 
         </LinearLayout>
+
     </com.facebook.shimmer.ShimmerFrameLayout>
 
+    <!-- Bottom Floating Cart Button -->
+    <LinearLayout
+        android:id="@+id/itemCartMain"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_next"
+        android:elevation="14dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/Next1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/carts3"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:text="View Cart"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
+        <TextView
+            android:id="@+id/showCount"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/bg_cart_count"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

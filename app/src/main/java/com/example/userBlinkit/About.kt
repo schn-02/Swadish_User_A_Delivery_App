@@ -32,7 +32,7 @@ class About: AppCompatActivity()
             val intent = Intent()
             intent.setAction(Intent.ACTION_VIEW)
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
-            intent.setData(Uri.parse("https://www.instagram.com/schn_rwt_02/"))
+            intent.setData(Uri.parse("https://www.instagram.com/schn_rwt02/"))
             startActivity(intent)
 
     }
@@ -42,7 +42,7 @@ class About: AppCompatActivity()
             val intent = Intent()
             intent.setAction(Intent.ACTION_VIEW)
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
-            intent.setData(Uri.parse("https://www.linkedin.com/in/sachin-rawat-542aab2b0/"))
+            intent.setData(Uri.parse("https://www.linkedin.com/in/schn-rwt/"))
             startActivity(intent)
 
     }
@@ -51,7 +51,7 @@ class About: AppCompatActivity()
             val intent = Intent()
             intent.setAction(Intent.ACTION_VIEW)
             intent.addCategory(Intent.CATEGORY_BROWSABLE)
-            intent.setData(Uri.parse("mailto:robbinhood846@gmail.com"))
+            intent.setData(Uri.parse("mailto:ssrxtech02@gmail.com"))
             startActivity(intent)
 
     }

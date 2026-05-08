@@ -1,103 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/signinbg"
-    tools:context=".Authentication.Signin">
+    android:background="@drawable/stars"
+    android:padding="24dp">
 
+    <!-- Top Animation -->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animation_view"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="Signup Animation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:contentDescription="Signin Animation"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/signup" />
+        app:lottie_rawRes="@raw/delivery" />
 
-
-    <EditText
-        android:id="@+id/enemail2"
-        android:layout_width="match_parent"
+    <!-- Login Card -->
+    <LinearLayout
+        android:id="@+id/loginCard"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
         android:gravity="center"
-        android:hint="Enter Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@color/yellow"
-        android:textColorHint="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/enpass2"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="22dp"
+        android:background="@drawable/login_card_bg"
+        app:layout_constraintTop_toBottomOf="@id/animation_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/animation_view"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
+        <TextView
+            android:id="@+id/loginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
 
-        android:id="@+id/enpass2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="112dp"
-        android:gravity="center"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
-        android:textColor="@color/yellow"
-        android:textColorHint="@color/white"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/dontaccount"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/loginSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login to continue"
+            android:textColor="#DDFFFFFF"
+            android:textSize="15sp"
+            android:layout_marginBottom="24dp" />
 
+        <EditText
+            android:id="@+id/enemail2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/input_bg"
+            android:gravity="center_vertical"
+            android:hint="Enter Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColor="@color/yellow"
+            android:textColorHint="#CCFFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/enpass2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/input_bg"
+            android:gravity="center_vertical"
+            android:hint="Enter Password"
+            android:inputType="textPassword"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:textColor="@color/yellow"
+            android:textColorHint="#CCFFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/signin"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Sign In"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dontaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="Don't have an account?"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Center Loading Animation -->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loadingFood"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="252dp"
-        android:contentDescription="Signup Animation"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:contentDescription="Loading Animation"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/load" />
-
-    <TextView
-        android:id="@+id/dontaccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Don't have an account?"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/signin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="#F6F3F3"
-        android:text="Signin"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.44"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

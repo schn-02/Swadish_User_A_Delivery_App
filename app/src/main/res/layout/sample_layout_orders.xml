@@ -1,109 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orderItemRoot"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_orders"
-    android:layout_height="150dp">
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/bg_order_item_card"
+    android:elevation="8dp"
+    android:padding="16dp">
 
-
+    <!-- Date -->
     <TextView
         android:id="@+id/Date"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
         android:text="Date"
-        android:textColor="#193AF2"
-        android:textSize="20sp"
+        android:textColor="#BDBDBD"
+        android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@id/status2" />
 
-    <ImageView
-        android:id="@+id/deleteOrder"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="120dp"
-        android:visibility="gone"
-        android:src="@drawable/remove"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toEndOf="@+id/status2" />
-
-    <TextView
-        android:id="@+id/count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:text="Count"
-        android:textColor="@color/green"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/price"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView15" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:text="X"
-        android:textColor="@color/green"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/price"
-        app:layout_constraintHorizontal_bias="0.065"
-        app:layout_constraintStart_toEndOf="@+id/ProductTitle" />
-
-
-
-    <TextView
-        android:id="@+id/ProductTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="28dp"
-        android:maxWidth="180dp"
-        android:text="Product Title"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Date" />
-
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="68dp"
-        android:layout_marginBottom="52dp"
-        android:text="Price"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.727" />
-
+    <!-- Status Chip -->
     <TextView
         android:id="@+id/status2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:background="@drawable/bg_order_status_chip"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
         android:text="Waiting"
         android:textColor="@color/yellow"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/price"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
-        app:layout_constraintStart_toEndOf="@+id/Date" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/deleteOrder" />
 
+    <!-- Delete Icon -->
+    <ImageView
+        android:id="@+id/deleteOrder"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_order_delete_icon"
+        android:contentDescription="Delete Order"
+        android:padding="8dp"
+        android:src="@drawable/remove"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/status2"
+        app:layout_constraintBottom_toBottomOf="@id/status2"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible" />
+
+    <!-- Product Title -->
+    <TextView
+        android:id="@+id/ProductTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Product Title"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toBottomOf="@id/Date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom Row -->
+    <LinearLayout
+        android:id="@+id/orderPriceRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ProductTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/green"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="×"
+            android:textColor="#DADADA"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Items"
+            android:textColor="#DADADA"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹0"
+            android:textColor="@color/green"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

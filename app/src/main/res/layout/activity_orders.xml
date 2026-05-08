@@ -1,66 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/black"
-    tools:context=".Orders.Orders">
+    android:background="@drawable/bg_splash_swadish">
 
+    <!-- Top Toolbar -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:id="@+id/linearorder"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:id="@+id/orderHeader"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/bg_order_toolbar"
+        android:elevation="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingEnd="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/backorder3"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="Back"
+            android:padding="10dp"
+            android:src="@drawable/arrowl" />
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/toolbarorder"
-            android:backgroundTint="@color/black"
-            android:layout_margin="10dp">
-
-            <ImageView
-                android:id="@+id/backorder3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/arrowl"
-                android:layout_marginRight="10dp"/>
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/orders11"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:drawablePadding="10dp"
-                android:hint="Orders"
-                android:gravity="left"
-                android:enabled="false"
-                android:padding="15dp"
-                android:layout_marginLeft="20dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="My Orders"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp"
+                android:textSize="21sp"
                 android:textStyle="bold" />
 
-        </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:id="@+id/orderSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Track your food orders"
+                android:textColor="#BDBDBD"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/orderRecycler"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    <!-- Section Title -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/orderListTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/yellow"
-        android:textSize="30sp"
-        android:text="OOPS , There is No Order"
-        android:layout_gravity="center"
-        android:id="@+id/orderno"
-        android:visibility="gone"/>
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="18dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Recent Orders"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/orderHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</LinearLayout>
+    <!-- Orders RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="18dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/orderListTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:itemCount="5" />
+
+    <!-- Empty Orders State -->
+    <LinearLayout
+        android:id="@+id/emptyOrderContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/bg_empty_order_card"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="26dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="26dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/orderHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/emptyOrderIcon"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:background="@drawable/bg_empty_order_icon"
+            android:gravity="center"
+            android:text="🧾"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/orderno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="No Orders Yet"
+            android:textAlignment="center"
+            android:textColor="@color/yellow"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/emptyOrderSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:lineSpacingExtra="3dp"
+            android:text="Your placed orders will appear here."
+            android:textAlignment="center"
+            android:textColor="#DADADA"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

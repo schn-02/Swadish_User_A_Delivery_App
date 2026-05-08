@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -214,8 +215,8 @@ class Profile : AppCompatActivity()
         dialog.show()
 
         // Initialize Views
-        val edit = dialog.findViewById<Button>(R.id.EditAddress)!!
-        val save = dialog.findViewById<Button>(R.id.SaveAddress)!!
+        val edit = dialog.findViewById<TextView>(R.id.EditAddress)!!
+        val save = dialog.findViewById<TextView>(R.id.SaveAddress)!!
         val State = dialog.findViewById<EditText>(R.id.state1)!!
         val District = dialog.findViewById<EditText>(R.id.District1)!!
         val pincode = dialog.findViewById<EditText>(R.id.PinCode1)!!
@@ -231,14 +232,6 @@ class Profile : AppCompatActivity()
                 val pin = snapshot.child("pincode1").getValue(String::class.java)
                 val state = snapshot.child("state1").getValue(String::class.java)
 
-//
-//                if (phone != null) {
-//                    // Set the phone number to the binding view
-//                    binding.number.text = phone
-//                } else {
-//                    // Handle the case where the phone number is not found
-//                    Toast.makeText(context, "Phone number not found", Toast.LENGTH_SHORT).show()
-//                }
 
                 // Populate the fields with the data
                 Address.setText(address)
