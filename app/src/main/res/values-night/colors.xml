@@ -13,7 +13,6 @@
     <color name="user_dark_bg_2">#14261E</color>
     <color name="user_header_green">#183629</color>
 
-    <color name="user_search_bg">#1E3328</color>
     <color name="user_card_bg">#1A2B23</color>
 
     <color name="user_yellow">#FFD166</color>
@@ -24,6 +23,9 @@
     <color name="user_text_soft">#D8E1D6</color>
     <color name="user_text_hint">#AEB9AD</color>
 
-    <color name="user_stroke_orange">#55FF9F1C</color>
     <color name="user_stroke_yellow">#44FFD166</color>
+
+    <color name="user_search_bg">#17382B</color>
+    <color name="user_stroke_orange">#FFB84D</color>
+    <color name="user_text_primary">#FFF8E7</color>
 </resources>

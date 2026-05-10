@@ -3,6 +3,7 @@ package com.example.userBlinkit
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.blinklit.databinding.ActivityAboutBinding
 
@@ -11,6 +12,7 @@ class About: AppCompatActivity()
 {    lateinit var binding : ActivityAboutBinding
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
 
         binding = ActivityAboutBinding.inflate(layoutInflater)
         setContentView(binding.root)

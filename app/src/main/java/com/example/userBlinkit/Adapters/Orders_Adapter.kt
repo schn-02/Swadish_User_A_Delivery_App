@@ -47,7 +47,7 @@ class Orders_Adapter(val context:Context , val list:ArrayList<Product>):Recycler
          holder.remove.setOnClickListener {
 
              val dialog = AlertDialog.Builder(context)
-             dialog.setMessage("Are you sure  want to Delete your order..😢 \"Please wait user , your order request  will accept soon..😊?")
+             dialog.setMessage("Are you sure you want to delete your order? Your order request may be accepted soon.")
              dialog.setPositiveButton("Yes"){dialog ,_->
                  removeorders(position)
                   notifyItemRemoved(position)             }
