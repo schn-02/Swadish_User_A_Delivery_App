@@ -5,31 +5,28 @@ An Android app built with Kotlin, XML, and Firebase. Users can browse menus, pla
 <p align="center">User-side UI flow of the Swadish Food Delivery Application</p>
 
 <table align="center" cellpadding="10">
-  <tr>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/fb27932b0201a4e61108fc4da237675e2c13cd84/Screenshot%202026-01-07%20200258.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/af82d17b62cb47e4c398680f575882656f6d659c/Screenshot%202026-01-07%20204008.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20210131.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20235323.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20235336.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20210131.png" width="140"/></td>
-  </tr>
+<tr>
+  <td><img src="screenshots/splashSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/signUpSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/signinSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/homeSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/tapSS.jpeg" width="150"/></td>
 
-  <tr>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20210207.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20210259.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20232211.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20232222.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20232307.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233842.png" width="140"/></td>
-  </tr>
+</tr>
+<tr>
+  <td><img src="screenshots/shimmerSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/searchSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/viewCartSS.jpeg" width="150"/></td>
 
-  <tr>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233908.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233934.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233101.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233111.png" width="140"/></td>
-    <td><img src="https://github.com/schn-02/Swadish_User_A_Delivery_App/blob/c5bd70818dcd44851a5d2adf4b707f4fe152e6ee/Screenshot%202026-01-07%20233126.png" width="140"/></td>
-  </tr>
+  <td><img src="screenshots/checkOutSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/rajorpaySS.jpeg" width="150"/></td>
+</tr>
+<tr>
+   <td><img src="screenshots/orderSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/checkoutItemss.jpeg" width="150"/></td>
+ <td><img src="screenshots/aboutSS.jpeg" width="150"/></td>
+  <td><img src="screenshots/addressSS.jpeg" width="150"/></td>
+</tr>
 </table>
 
-<br><br>
+
